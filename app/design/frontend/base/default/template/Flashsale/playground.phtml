@@ -1,0 +1,87 @@
+<?php
+$ip = $this->getIP();
+$cart = "http://icons.iconarchive.com/icons/fasticon/shop-cart/512/shop-cart-icon.png";
+$json = $this->getProductJson();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<style type="text/css">
+    #game-container{
+        position: relative;
+        width: 1278px;
+        height: 658px;
+        background: url('https://media.timeout.com/images/102701457/image.jpg');
+        background-size: cover;
+    }
+    #game-container #flash_bucket{
+        position: absolute;
+        z-index: 10001;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        box-shadow: 0px 0px 100px #CCCCFF;
+    }
+    .cart-hover{
+        border-radius: 50%;
+        box-shadow: 0px 0px 100px white !important;
+    }
+    #timer{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 20px;
+        font-family: "Arial";
+        font-weight: bold;
+        color: white;
+        background-color: #7a7a7a;
+        opacity: 0.8;
+    }
+    #time_remaining{
+        font-size: 3em;
+    }
+</style>
+<div id="game-container">
+    <img src="<?php echo $cart ?>" id="flash_bucket" style="width:200px;height:200px;">
+    <span id="timer">Ends In<div id="time_remaining"></div></span>
+</div>
+<!--<script type="text/javascript" src="FlashSale.js"></script>-->
+<script language="javascript" type="text/javascript">
+    var wsUri = "<?php echo $this->getSocketUrl()?>";
+
+    var PRODUCT_JSON = '<?php echo $json ?>';
+
+    var flashSale = new FlashSale(document.getElementById("game-container"), document.getElementById("flash_bucket"), JSON.parse(PRODUCT_JSON), document.getElementById("time_remaining"));
+    flashSale.homePage = '<?php echo $this->getHomePage() ?>';
+    flashSale.registerSocket(wsUri);
+    flashSale.myIP = '<?php echo $ip ?>';
+    flashSale.notify = true;
+    flashSale.draggableClass = "box";
+    flashSale.warnBeforeClose(true);
+    flashSale._nickname = '<?php echo $this->getPlayerName() ?>';
+    flashSale.start();
+    flashSale.saleEndCallback = function(){
+
+        jQuery.post('<?php echo $this->getSaleUrl()?>',{"cart": JSON.stringify(flashSale._myCart)},function(response){
+            response = JSON.parse(response);
+            if(response.status !='200')
+            {
+                alert("There Was Some Error Processiong Your Request.Please Contact Admin.");
+            }
+            else
+            {
+                alert("Sale Products Added To Cart Successfully. You Will Now Be Redirected To Cart..");
+            }
+            alert("Your cart will now be flushed and only the sale items will be added");
+            setLocation(response.url);
+        });
+
+    }
+</script>
+</body>
+</html>

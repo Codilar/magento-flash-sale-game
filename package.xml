@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Codilar FlashSale</name>
+    <version>0.0.1</version>
+    <stability>beta</stability>
+    <license>GNU</license>
+    <channel>local</channel>
+    <extends/>
+    <summary>Indulge your customers in a cool new way to shop. A flashsale multiplayer game!</summary>
+    <description>Indulge your customers in a cool new way to shop. A flashsale multiplayer game!</description>
+    <notes>Indulge your customers in a cool new way to shop. A flashsale multiplayer game!</notes>
+    <authors><author><name>Jayanka Ghosh</name><user>joy</user><email>joy@codilar.com</email></author><author><name>Prakhar Bhardwaj</name><user>prakhar</user><email>prakhar@codilar.com</email></author><author><name>Subodh Kalika</name><user>subodh</user><email>subodh@codilar.com</email></author></authors>
+    <date>2017-03-29</date>
+    <time>07:18:51</time>
+    <contents><target name="magelocal"><dir name="Codilar"><dir><dir name="Flashsale"><dir name="Block"><file name="Index.php" hash="f3dd3c989aa5b7c34756ea21fd668f4b"/></dir><dir name="Helper"><file name="Data.php" hash="79eef82f981131a134b71326aec8a465"/></dir><dir name="Model"><file name="Observer.php" hash="da6a7e108f0985e8dccb85192c46bc6a"/></dir><dir name="controllers"><file name="IndexController.php" hash="487ed5d2b8a6dbbaa2943b404172d64f"/></dir><dir name="etc"><file name="adminhtml.xml" hash="437229c29b19125bfe0d174cc8842728"/><file name="api2.xml" hash="1fb57214c16f5b209561a2d531697bf9"/><file name="config.xml" hash="ab39d75e3dda247fb05669778ffc1a39"/><file name="system.xml" hash="d9dec7ecbb0d5d2b41c3143ddae3d8ca"/></dir><file name="readme.txt" hash="3f7238a00678d82c86b994a66899e49e"/><dir name="sql"><dir name="flashsale_setup"><file name="mysql4-install-0.1.0.php" hash="2eee30c3c1244393a693fda76cae245e"/></dir></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="flashsale.xml" hash="7d724c5e786da6a405f290f109dbd8fa"/></dir><dir name="template"><dir name="Flashsale"><file name="playground.phtml" hash="8440e29619be44eebb2087ed604d8ca2"/></dir></dir></dir></dir></dir></target><target name="mage"><dir name="js"><dir name="Flashsale"><file name="FlashSale.js" hash="69fb71d6882c08cb659ae82e197b1c8d"/><file name="jquery-ui.js" hash="ab5284de5e3d221e53647fd348e5644b"/><file name="jquery.min.js" hash="c9f5aeeca3ad37bf2aa006139b935f0a"/></dir></dir><dir name="."><file name="server.php" hash="b1874e8f15ba69cf178b0db1cccb6539"/></dir></target><target name="mageetc"><dir name="modules"><file name="Codilar_Flashsale.xml" hash="2b9d46ccbad63d4489c57490671e965b"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.6</min><max>7.0</max></php></required></dependencies>
+</package>

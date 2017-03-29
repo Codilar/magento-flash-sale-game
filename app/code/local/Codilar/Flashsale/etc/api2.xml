@@ -1,0 +1,36 @@
+<config>
+    <api2>
+        <resource_groups>
+            <flashsale translate="title" module="Codilar_Flashsale">
+                <title>Flash Sale Api</title>
+                <sort_order>10</sort_order>
+            </flashsale>
+        </resource_groups>
+        <resources>
+            <flashsale translate="title" module="Codilar_Flashsale">
+                <group>flashsale</group>
+                <model>flashsale/api2_product</model>
+                <title>Flashsale</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <retrieve>1</retrieve>
+                    </admin>
+                    <guest>
+                        <retrieve>1</retrieve>
+                    </guest>
+                </privileges>
+                <attributes>
+                    <name>name</name>
+                </attributes>
+                <routes>
+                    <route_collection>
+                        <route>/sale</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                </routes>
+                <versions>1</versions>
+            </flashsale>
+        </resources>
+    </api2>
+</config>

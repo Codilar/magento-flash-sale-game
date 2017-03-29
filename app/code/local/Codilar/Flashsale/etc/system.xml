@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<codilar translate="label" module="flashsale">
+            <label>Codilar</label>
+            <sort_order>100</sort_order>
+        </codilar>
+	  </tabs>
+	  <sections>
+		<flashsale  translate="label" module="flashsale">                    
+		<label>Flash Sale</label>
+		<tab>codilar</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>0</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <general translate="label"> 
+					  <label>General</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <status translate="label">
+                            <label>Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </status>
+                          <duration translate="label">
+                            <label>Sale Duration</label>
+							  <comment>In Seconds</comment>
+							<frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </duration>
+						   <socket_url>
+							   <label>Socket Url</label>
+							   <comment>Compelete Reference To Base Url</comment>
+							   <frontend_type>text</frontend_type>
+							   <show_in_default>1</show_in_default>
+							   <show_in_website>1</show_in_website>
+							   <show_in_store>1</show_in_store>
+						   </socket_url>
+					   </fields>
+					   </general>
+					</groups>
+		</flashsale>
+	  </sections>
+</config>
