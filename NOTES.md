@@ -32,6 +32,6 @@ Socket Url : Set path of file "server.php" currently paced under your magento ro
 
 Presmissions
 Server.php. 
-File Owner  = www.data/
+File Owner  = www-data/
 File Permissions 777.
 
